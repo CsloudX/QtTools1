@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Macro Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="extending-index.html">Extending Qt Creator Manual</a></td><td >Macro</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Extending Qt Creator Manual 4.5.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Macro Class</h1>
+<span class="small-subtitle">(<a href="projectexplorer-macro.html">ProjectExplorer::Macro</a>)<br/></span>
+<ul>
+<li><a href="projectexplorer-macro-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#Macro">Macro</a></b>() = default</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#Macro-1">Macro</a></b>(QByteArray <i>key</i>, QByteArray <i>value</i>, MacroType <i>type</i> = MacroType::Define)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#Macro-2">Macro</a></b>(QByteArray <i>key</i>, MacroType <i>type</i> = MacroType::Define)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#toByteArray">toByteArray</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#toKeyValue">toKeyValue</a></b>(const QByteArray &amp;<i>prefix</i>) const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Macro </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#fromKeyValue">fromKeyValue</a></b>(const QString &amp;<i>utf16text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Macro </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#fromKeyValue-1">fromKeyValue</a></b>(const QByteArray &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#toByteArray-1">toByteArray</a></b>(const Macros &amp;<i>macros</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#toByteArray-2">toByteArray</a></b>(const QVector&lt;Macros&gt; &amp;<i>macross</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Macros </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-macro.html#toMacros">toMacros</a></b>(const QByteArray &amp;<i>text</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Macro[overload1]$$$Macro -->
+<h3 class="fn" id="Macro"><a name="Macro"></a><code>[default] </code>Macro::<span class="name">Macro</span>()</h3>
+<p>Default constructs an instance of Macro.</p><!-- @@@Macro -->
+<!-- $$$Macro$$$MacroQByteArrayQByteArrayMacroType -->
+<h3 class="fn" id="Macro-1"><a name="Macro-1"></a>Macro::<span class="name">Macro</span>(<span class="type">QByteArray</span> <i>key</i>, <span class="type">QByteArray</span> <i>value</i>, <span class="type"><a href="projectexplorer.html#MacroType-enum">MacroType</a></span> <i>type</i> = MacroType::Define)</h3>
+<p>Default constructs an instance of Macro.</p><!-- @@@Macro -->
+<!-- $$$Macro$$$MacroQByteArrayMacroType -->
+<h3 class="fn" id="Macro-2"><a name="Macro-2"></a>Macro::<span class="name">Macro</span>(<span class="type">QByteArray</span> <i>key</i>, <span class="type"><a href="projectexplorer.html#MacroType-enum">MacroType</a></span> <i>type</i> = MacroType::Define)</h3>
+<p>Default constructs an instance of Macro.</p><!-- @@@Macro -->
+<!-- $$$fromKeyValue[overload1]$$$fromKeyValueconstQString& -->
+<h3 class="fn" id="fromKeyValue"><a name="fromKeyValue"></a><code>[static] </code><span class="type"><a href="projectexplorer-macro.html#Macro">Macro</a></span> Macro::<span class="name">fromKeyValue</span>(const <span class="type">QString</span> &amp;<i>utf16text</i>)</h3>
+<!-- @@@fromKeyValue -->
+<!-- $$$fromKeyValue$$$fromKeyValueconstQByteArray& -->
+<h3 class="fn" id="fromKeyValue-1"><a name="fromKeyValue-1"></a><code>[static] </code><span class="type"><a href="projectexplorer-macro.html#Macro">Macro</a></span> Macro::<span class="name">fromKeyValue</span>(const <span class="type">QByteArray</span> &amp;<i>text</i>)</h3>
+<!-- @@@fromKeyValue -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn" id="isValid"><a name="isValid"></a><span class="type">bool</span> Macro::<span class="name">isValid</span>() const</h3>
+<!-- @@@isValid -->
+<!-- $$$toByteArray[overload1]$$$toByteArray -->
+<h3 class="fn" id="toByteArray"><a name="toByteArray"></a><span class="type">QByteArray</span> Macro::<span class="name">toByteArray</span>() const</h3>
+<!-- @@@toByteArray -->
+<!-- $$$toByteArray$$$toByteArrayconstMacros& -->
+<h3 class="fn" id="toByteArray-1"><a name="toByteArray-1"></a><code>[static] </code><span class="type">QByteArray</span> Macro::<span class="name">toByteArray</span>(const <span class="type">Macros</span> &amp;<i>macros</i>)</h3>
+<!-- @@@toByteArray -->
+<!-- $$$toByteArray$$$toByteArrayconstQVector<Macros>& -->
+<h3 class="fn" id="toByteArray-2"><a name="toByteArray-2"></a><code>[static] </code><span class="type">QByteArray</span> Macro::<span class="name">toByteArray</span>(const <span class="type">QVector</span>&lt;<span class="type">Macros</span>&gt; &amp;<i>macross</i>)</h3>
+<!-- @@@toByteArray -->
+<!-- $$$toKeyValue[overload1]$$$toKeyValueconstQByteArray& -->
+<h3 class="fn" id="toKeyValue"><a name="toKeyValue"></a><span class="type">QByteArray</span> Macro::<span class="name">toKeyValue</span>(const <span class="type">QByteArray</span> &amp;<i>prefix</i>) const</h3>
+<!-- @@@toKeyValue -->
+<!-- $$$toMacros[overload1]$$$toMacrosconstQByteArray& -->
+<h3 class="fn" id="toMacros"><a name="toMacros"></a><code>[static] </code><span class="type">Macros</span> Macro::<span class="name">toMacros</span>(const <span class="type">QByteArray</span> &amp;<i>text</i>)</h3>
+<!-- @@@toMacros -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

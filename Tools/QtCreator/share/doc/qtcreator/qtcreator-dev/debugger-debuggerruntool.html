@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>DebuggerRunTool Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="extending-index.html">Extending Qt Creator Manual</a></td><td >DebuggerRunTool</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Extending Qt Creator Manual 4.5.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">DebuggerRunTool Class</h1>
+<span class="small-subtitle">(<a href="debugger-debuggerruntool.html">Debugger::DebuggerRunTool</a>)<br/></span>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="projectexplorer-runworker.html">ProjectExplorer::RunWorker</a></td></tr></table></div><ul>
+<li><a href="debugger-debuggerruntool-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#DebuggerRunTool">DebuggerRunTool</a></b>(ProjectExplorer::RunControl *<i>runControl</i>, ProjectExplorer::Kit *<i>kit</i> = nullptr, bool <i>allowTerminal</i> = true)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#dtor.DebuggerRunTool">~DebuggerRunTool</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#abortDebugger">abortDebugger</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Internal::DebuggerEngine *</td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#activeEngine">activeEngine</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#addExpectedSignal">addExpectedSignal</a></b>(const QString &amp;<i>signal</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#addQmlServerInferiorCommandLineArgumentIfNeeded">addQmlServerInferiorCommandLineArgumentIfNeeded</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#addSearchDirectory">addSearchDirectory</a></b>(const QString &amp;<i>dir</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#addSolibSearchDir">addSolibSearchDir</a></b>(const QString &amp;<i>str</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#appendInferiorCommandLineArgument">appendInferiorCommandLineArgument</a></b>(const QString &amp;<i>arg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Internal::DebuggerEngine *</td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#engine">engine</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#isCppDebugging">isCppDebugging</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#isDying">isDying</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#isQmlDebugging">isQmlDebugging</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#notifyInferiorIll">notifyInferiorIll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> GdbServerPortsGatherer *</td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#portsGatherer">portsGatherer</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#portsUsedByDebugger">portsUsedByDebugger</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#prependInferiorCommandLineArgument">prependInferiorCommandLineArgument</a></b>(const QString &amp;<i>arg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#quitDebugger">quitDebugger</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const Internal::DebuggerRunParameters &amp;</td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#runParameters">runParameters</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setAttachPid">setAttachPid</a></b>(Utils::ProcessHandle <i>pid</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setAttachPid-1">setAttachPid</a></b>(qint64 <i>pid</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setBreakOnMain">setBreakOnMain</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setCloseMode">setCloseMode</a></b>(DebuggerCloseMode <i>closeMode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setCommandsAfterConnect">setCommandsAfterConnect</a></b>(const QString &amp;<i>commands</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setCommandsForReset">setCommandsForReset</a></b>(const QString &amp;<i>commands</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setContinueAfterAttach">setContinueAfterAttach</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setCoreFileName">setCoreFileName</a></b>(const QString &amp;<i>core</i>, bool <i>isSnapshot</i> = false)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setCrashParameter">setCrashParameter</a></b>(const QString &amp;<i>event</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setDebugInfoLocation">setDebugInfoLocation</a></b>(const QString &amp;<i>debugInfoLocation</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setDeviceSymbolsRoot">setDeviceSymbolsRoot</a></b>(const QString &amp;<i>deviceSymbolsRoot</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setInferior">setInferior</a></b>(const ProjectExplorer::Runnable &amp;<i>runnable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setInferiorDevice">setInferiorDevice</a></b>(ProjectExplorer::IDevice::ConstPtr <i>device</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setInferiorEnvironment">setInferiorEnvironment</a></b>(const Utils::Environment &amp;<i>env</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setInferiorExecutable">setInferiorExecutable</a></b>(const QString &amp;<i>executable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setIosPlatform">setIosPlatform</a></b>(const QString &amp;<i>platform</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setOverrideStartScript">setOverrideStartScript</a></b>(const QString &amp;<i>script</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setQmlServer">setQmlServer</a></b>(const QUrl &amp;<i>qmlServer</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setRemoteChannel">setRemoteChannel</a></b>(const QString &amp;<i>channel</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setRemoteChannel-1">setRemoteChannel</a></b>(const QString &amp;<i>host</i>, int <i>port</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setRunControlName">setRunControlName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setServerStartScript">setServerStartScript</a></b>(const QString &amp;<i>serverStartScript</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setSkipExecutableValidation">setSkipExecutableValidation</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setSolibSearchPath">setSolibSearchPath</a></b>(const QStringList &amp;<i>list</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setStartMessage">setStartMessage</a></b>(const QString &amp;<i>msg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setStartMode">setStartMode</a></b>(DebuggerStartMode <i>startMode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setSymbolFile">setSymbolFile</a></b>(const QString &amp;<i>symbolFile</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setSysRoot">setSysRoot</a></b>(const QString &amp;<i>sysRoot</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setTestCase">setTestCase</a></b>(int <i>testCase</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUseContinueInsteadOfRun">setUseContinueInsteadOfRun</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUseCtrlCStub">setUseCtrlCStub</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUseExtendedRemote">setUseExtendedRemote</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUsePortsGatherer">setUsePortsGatherer</a></b>(bool <i>useCpp</i>, bool <i>useQml</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUseTargetAsync">setUseTargetAsync</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setUseTerminal">setUseTerminal</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#showMessage">showMessage</a></b>(const QString &amp;<i>msg</i>, int <i>channel</i> = LogDebug, int <i>timeout</i> = -1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#start">start</a></b>() override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#startDying">startDying</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#startRunControl">startRunControl</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#stop">stop</a></b>() override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Internal::TerminalRunner *</td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#terminalRunner">terminalRunner</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">23 public functions inherited from <a href="projectexplorer-runworker.html#public-functions">ProjectExplorer::RunWorker</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#aboutToNotifyInferiorSetupOk">aboutToNotifyInferiorSetupOk</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 signals inherited from <a href="projectexplorer-runworker.html#signals">ProjectExplorer::RunWorker</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="debugger-debuggerruntool.html#setBreakOnMainNextTime">setBreakOnMainNextTime</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">1 static public member inherited from <a href="projectexplorer-runworker.html#static-public-members">ProjectExplorer::RunWorker</a></li>
+</ul>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$DebuggerRunTool[overload1]$$$DebuggerRunToolProjectExplorer::RunControl*ProjectExplorer::Kit*bool -->
+<h3 class="fn" id="DebuggerRunTool"><a name="DebuggerRunTool"></a>DebuggerRunTool::<span class="name">DebuggerRunTool</span>(<span class="type"><a href="projectexplorer-runcontrol.html">ProjectExplorer::RunControl</a></span> *<i>runControl</i>, <span class="type"><a href="projectexplorer-kit.html">ProjectExplorer::Kit</a></span> *<i>kit</i> = nullptr, <span class="type">bool</span> <i>allowTerminal</i> = true)</h3>
+<p>Default constructs an instance of DebuggerRunTool.</p><!-- @@@DebuggerRunTool -->
+<!-- $$$~DebuggerRunTool[overload1]$$$~DebuggerRunTool -->
+<h3 class="fn" id="dtor.DebuggerRunTool"><a name="dtor.DebuggerRunTool"></a>DebuggerRunTool::<span class="name">~DebuggerRunTool</span>()</h3>
+<p>Destroys the instance of DebuggerRunTool.</p><!-- @@@~DebuggerRunTool -->
+<!-- $$$abortDebugger[overload1]$$$abortDebugger -->
+<h3 class="fn" id="abortDebugger"><a name="abortDebugger"></a><span class="type">void</span> DebuggerRunTool::<span class="name">abortDebugger</span>()</h3>
+<!-- @@@abortDebugger -->
+<!-- $$$aboutToNotifyInferiorSetupOk[overload1]$$$aboutToNotifyInferiorSetupOk -->
+<h3 class="fn" id="aboutToNotifyInferiorSetupOk"><a name="aboutToNotifyInferiorSetupOk"></a><code>[signal] </code><span class="type">void</span> DebuggerRunTool::<span class="name">aboutToNotifyInferiorSetupOk</span>()</h3>
+<!-- @@@aboutToNotifyInferiorSetupOk -->
+<!-- $$$activeEngine[overload1]$$$activeEngine -->
+<h3 class="fn" id="activeEngine"><a name="activeEngine"></a><span class="type"><a href="debugger-internal-debuggerengine.html">Internal::DebuggerEngine</a></span> *DebuggerRunTool::<span class="name">activeEngine</span>() const</h3>
+<!-- @@@activeEngine -->
+<!-- $$$addExpectedSignal[overload1]$$$addExpectedSignalconstQString& -->
+<h3 class="fn" id="addExpectedSignal"><a name="addExpectedSignal"></a><span class="type">void</span> DebuggerRunTool::<span class="name">addExpectedSignal</span>(const <span class="type">QString</span> &amp;<i>signal</i>)</h3>
+<!-- @@@addExpectedSignal -->
+<!-- $$$addQmlServerInferiorCommandLineArgumentIfNeeded[overload1]$$$addQmlServerInferiorCommandLineArgumentIfNeeded -->
+<h3 class="fn" id="addQmlServerInferiorCommandLineArgumentIfNeeded"><a name="addQmlServerInferiorCommandLineArgumentIfNeeded"></a><span class="type">void</span> DebuggerRunTool::<span class="name">addQmlServerInferiorCommandLineArgumentIfNeeded</span>()</h3>
+<!-- @@@addQmlServerInferiorCommandLineArgumentIfNeeded -->
+<!-- $$$addSearchDirectory[overload1]$$$addSearchDirectoryconstQString& -->
+<h3 class="fn" id="addSearchDirectory"><a name="addSearchDirectory"></a><span class="type">void</span> DebuggerRunTool::<span class="name">addSearchDirectory</span>(const <span class="type">QString</span> &amp;<i>dir</i>)</h3>
+<!-- @@@addSearchDirectory -->
+<!-- $$$addSolibSearchDir[overload1]$$$addSolibSearchDirconstQString& -->
+<h3 class="fn" id="addSolibSearchDir"><a name="addSolibSearchDir"></a><span class="type">void</span> DebuggerRunTool::<span class="name">addSolibSearchDir</span>(const <span class="type">QString</span> &amp;<i>str</i>)</h3>
+<!-- @@@addSolibSearchDir -->
+<!-- $$$appendInferiorCommandLineArgument[overload1]$$$appendInferiorCommandLineArgumentconstQString& -->
+<h3 class="fn" id="appendInferiorCommandLineArgument"><a name="appendInferiorCommandLineArgument"></a><span class="type">void</span> DebuggerRunTool::<span class="name">appendInferiorCommandLineArgument</span>(const <span class="type">QString</span> &amp;<i>arg</i>)</h3>
+<!-- @@@appendInferiorCommandLineArgument -->
+<!-- $$$engine[overload1]$$$engine -->
+<h3 class="fn" id="engine"><a name="engine"></a><span class="type"><a href="debugger-internal-debuggerengine.html">Internal::DebuggerEngine</a></span> *DebuggerRunTool::<span class="name">engine</span>() const</h3>
+<!-- @@@engine -->
+<!-- $$$isCppDebugging[overload1]$$$isCppDebugging -->
+<h3 class="fn" id="isCppDebugging"><a name="isCppDebugging"></a><span class="type">bool</span> DebuggerRunTool::<span class="name">isCppDebugging</span>() const</h3>
+<!-- @@@isCppDebugging -->
+<!-- $$$isDying[overload1]$$$isDying -->
+<h3 class="fn" id="isDying"><a name="isDying"></a><span class="type">bool</span> DebuggerRunTool::<span class="name">isDying</span>() const</h3>
+<!-- @@@isDying -->
+<!-- $$$isQmlDebugging[overload1]$$$isQmlDebugging -->
+<h3 class="fn" id="isQmlDebugging"><a name="isQmlDebugging"></a><span class="type">bool</span> DebuggerRunTool::<span class="name">isQmlDebugging</span>() const</h3>
+<!-- @@@isQmlDebugging -->
+<!-- $$$notifyInferiorIll[overload1]$$$notifyInferiorIll -->
+<h3 class="fn" id="notifyInferiorIll"><a name="notifyInferiorIll"></a><span class="type">void</span> DebuggerRunTool::<span class="name">notifyInferiorIll</span>()</h3>
+<!-- @@@notifyInferiorIll -->
+<!-- $$$portsGatherer[overload1]$$$portsGatherer -->
+<h3 class="fn" id="portsGatherer"><a name="portsGatherer"></a><span class="type"><a href="debugger-gdbserverportsgatherer.html">GdbServerPortsGatherer</a></span> *DebuggerRunTool::<span class="name">portsGatherer</span>() const</h3>
+<!-- @@@portsGatherer -->
+<!-- $$$portsUsedByDebugger[overload1]$$$portsUsedByDebugger -->
+<h3 class="fn" id="portsUsedByDebugger"><a name="portsUsedByDebugger"></a><span class="type">int</span> DebuggerRunTool::<span class="name">portsUsedByDebugger</span>() const</h3>
+<!-- @@@portsUsedByDebugger -->
+<!-- $$$prependInferiorCommandLineArgument[overload1]$$$prependInferiorCommandLineArgumentconstQString& -->
+<h3 class="fn" id="prependInferiorCommandLineArgument"><a name="prependInferiorCommandLineArgument"></a><span class="type">void</span> DebuggerRunTool::<span class="name">prependInferiorCommandLineArgument</span>(const <span class="type">QString</span> &amp;<i>arg</i>)</h3>
+<!-- @@@prependInferiorCommandLineArgument -->
+<!-- $$$quitDebugger[overload1]$$$quitDebugger -->
+<h3 class="fn" id="quitDebugger"><a name="quitDebugger"></a><span class="type">void</span> DebuggerRunTool::<span class="name">quitDebugger</span>()</h3>
+<!-- @@@quitDebugger -->
+<!-- $$$runParameters[overload1]$$$runParameters -->
+<h3 class="fn" id="runParameters"><a name="runParameters"></a>const <span class="type"><a href="debugger-internal-debuggerrunparameters.html">Internal::DebuggerRunParameters</a></span> &amp;DebuggerRunTool::<span class="name">runParameters</span>() const</h3>
+<!-- @@@runParameters -->
+<!-- $$$setAttachPid[overload1]$$$setAttachPidUtils::ProcessHandle -->
+<h3 class="fn" id="setAttachPid"><a name="setAttachPid"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setAttachPid</span>(<span class="type"><a href="utils-processhandle.html">Utils::ProcessHandle</a></span> <i>pid</i>)</h3>
+<!-- @@@setAttachPid -->
+<!-- $$$setAttachPid$$$setAttachPidqint64 -->
+<h3 class="fn" id="setAttachPid-1"><a name="setAttachPid-1"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setAttachPid</span>(<span class="type">qint64</span> <i>pid</i>)</h3>
+<!-- @@@setAttachPid -->
+<!-- $$$setBreakOnMain[overload1]$$$setBreakOnMainbool -->
+<h3 class="fn" id="setBreakOnMain"><a name="setBreakOnMain"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setBreakOnMain</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setBreakOnMain -->
+<!-- $$$setBreakOnMainNextTime[overload1]$$$setBreakOnMainNextTime -->
+<h3 class="fn" id="setBreakOnMainNextTime"><a name="setBreakOnMainNextTime"></a><code>[static] </code><span class="type">void</span> DebuggerRunTool::<span class="name">setBreakOnMainNextTime</span>()</h3>
+<!-- @@@setBreakOnMainNextTime -->
+<!-- $$$setCloseMode[overload1]$$$setCloseModeDebuggerCloseMode -->
+<h3 class="fn" id="setCloseMode"><a name="setCloseMode"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setCloseMode</span>(<span class="type"><a href="debugger.html#DebuggerCloseMode-enum">DebuggerCloseMode</a></span> <i>closeMode</i>)</h3>
+<!-- @@@setCloseMode -->
+<!-- $$$setCommandsAfterConnect[overload1]$$$setCommandsAfterConnectconstQString& -->
+<h3 class="fn" id="setCommandsAfterConnect"><a name="setCommandsAfterConnect"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setCommandsAfterConnect</span>(const <span class="type">QString</span> &amp;<i>commands</i>)</h3>
+<!-- @@@setCommandsAfterConnect -->
+<!-- $$$setCommandsForReset[overload1]$$$setCommandsForResetconstQString& -->
+<h3 class="fn" id="setCommandsForReset"><a name="setCommandsForReset"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setCommandsForReset</span>(const <span class="type">QString</span> &amp;<i>commands</i>)</h3>
+<!-- @@@setCommandsForReset -->
+<!-- $$$setContinueAfterAttach[overload1]$$$setContinueAfterAttachbool -->
+<h3 class="fn" id="setContinueAfterAttach"><a name="setContinueAfterAttach"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setContinueAfterAttach</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setContinueAfterAttach -->
+<!-- $$$setCoreFileName[overload1]$$$setCoreFileNameconstQString&bool -->
+<h3 class="fn" id="setCoreFileName"><a name="setCoreFileName"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setCoreFileName</span>(const <span class="type">QString</span> &amp;<i>core</i>, <span class="type">bool</span> <i>isSnapshot</i> = false)</h3>
+<!-- @@@setCoreFileName -->
+<!-- $$$setCrashParameter[overload1]$$$setCrashParameterconstQString& -->
+<h3 class="fn" id="setCrashParameter"><a name="setCrashParameter"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setCrashParameter</span>(const <span class="type">QString</span> &amp;<i>event</i>)</h3>
+<!-- @@@setCrashParameter -->
+<!-- $$$setDebugInfoLocation[overload1]$$$setDebugInfoLocationconstQString& -->
+<h3 class="fn" id="setDebugInfoLocation"><a name="setDebugInfoLocation"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setDebugInfoLocation</span>(const <span class="type">QString</span> &amp;<i>debugInfoLocation</i>)</h3>
+<!-- @@@setDebugInfoLocation -->
+<!-- $$$setDeviceSymbolsRoot[overload1]$$$setDeviceSymbolsRootconstQString& -->
+<h3 class="fn" id="setDeviceSymbolsRoot"><a name="setDeviceSymbolsRoot"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setDeviceSymbolsRoot</span>(const <span class="type">QString</span> &amp;<i>deviceSymbolsRoot</i>)</h3>
+<!-- @@@setDeviceSymbolsRoot -->
+<!-- $$$setInferior[overload1]$$$setInferiorconstProjectExplorer::Runnable& -->
+<h3 class="fn" id="setInferior"><a name="setInferior"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setInferior</span>(const <span class="type">ProjectExplorer::Runnable</span> &amp;<i>runnable</i>)</h3>
+<!-- @@@setInferior -->
+<!-- $$$setInferiorDevice[overload1]$$$setInferiorDeviceProjectExplorer::IDevice::ConstPtr -->
+<h3 class="fn" id="setInferiorDevice"><a name="setInferiorDevice"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setInferiorDevice</span>(<span class="type"><a href="projectexplorer-idevice.html#ConstPtr-typedef">ProjectExplorer::IDevice::ConstPtr</a></span> <i>device</i>)</h3>
+<!-- @@@setInferiorDevice -->
+<!-- $$$setInferiorEnvironment[overload1]$$$setInferiorEnvironmentconstUtils::Environment& -->
+<h3 class="fn" id="setInferiorEnvironment"><a name="setInferiorEnvironment"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setInferiorEnvironment</span>(const <span class="type"><a href="utils-environment.html">Utils::Environment</a></span> &amp;<i>env</i>)</h3>
+<!-- @@@setInferiorEnvironment -->
+<!-- $$$setInferiorExecutable[overload1]$$$setInferiorExecutableconstQString& -->
+<h3 class="fn" id="setInferiorExecutable"><a name="setInferiorExecutable"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setInferiorExecutable</span>(const <span class="type">QString</span> &amp;<i>executable</i>)</h3>
+<!-- @@@setInferiorExecutable -->
+<!-- $$$setIosPlatform[overload1]$$$setIosPlatformconstQString& -->
+<h3 class="fn" id="setIosPlatform"><a name="setIosPlatform"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setIosPlatform</span>(const <span class="type">QString</span> &amp;<i>platform</i>)</h3>
+<!-- @@@setIosPlatform -->
+<!-- $$$setOverrideStartScript[overload1]$$$setOverrideStartScriptconstQString& -->
+<h3 class="fn" id="setOverrideStartScript"><a name="setOverrideStartScript"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setOverrideStartScript</span>(const <span class="type">QString</span> &amp;<i>script</i>)</h3>
+<!-- @@@setOverrideStartScript -->
+<!-- $$$setQmlServer[overload1]$$$setQmlServerconstQUrl& -->
+<h3 class="fn" id="setQmlServer"><a name="setQmlServer"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setQmlServer</span>(const <span class="type">QUrl</span> &amp;<i>qmlServer</i>)</h3>
+<!-- @@@setQmlServer -->
+<!-- $$$setRemoteChannel[overload1]$$$setRemoteChannelconstQString& -->
+<h3 class="fn" id="setRemoteChannel"><a name="setRemoteChannel"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setRemoteChannel</span>(const <span class="type">QString</span> &amp;<i>channel</i>)</h3>
+<!-- @@@setRemoteChannel -->
+<!-- $$$setRemoteChannel$$$setRemoteChannelconstQString&int -->
+<h3 class="fn" id="setRemoteChannel-1"><a name="setRemoteChannel-1"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setRemoteChannel</span>(const <span class="type">QString</span> &amp;<i>host</i>, <span class="type">int</span> <i>port</i>)</h3>
+<!-- @@@setRemoteChannel -->
+<!-- $$$setRunControlName[overload1]$$$setRunControlNameconstQString& -->
+<h3 class="fn" id="setRunControlName"><a name="setRunControlName"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setRunControlName</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<!-- @@@setRunControlName -->
+<!-- $$$setServerStartScript[overload1]$$$setServerStartScriptconstQString& -->
+<h3 class="fn" id="setServerStartScript"><a name="setServerStartScript"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setServerStartScript</span>(const <span class="type">QString</span> &amp;<i>serverStartScript</i>)</h3>
+<!-- @@@setServerStartScript -->
+<!-- $$$setSkipExecutableValidation[overload1]$$$setSkipExecutableValidationbool -->
+<h3 class="fn" id="setSkipExecutableValidation"><a name="setSkipExecutableValidation"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setSkipExecutableValidation</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setSkipExecutableValidation -->
+<!-- $$$setSolibSearchPath[overload1]$$$setSolibSearchPathconstQStringList& -->
+<h3 class="fn" id="setSolibSearchPath"><a name="setSolibSearchPath"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setSolibSearchPath</span>(const <span class="type">QStringList</span> &amp;<i>list</i>)</h3>
+<!-- @@@setSolibSearchPath -->
+<!-- $$$setStartMessage[overload1]$$$setStartMessageconstQString& -->
+<h3 class="fn" id="setStartMessage"><a name="setStartMessage"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setStartMessage</span>(const <span class="type">QString</span> &amp;<i>msg</i>)</h3>
+<!-- @@@setStartMessage -->
+<!-- $$$setStartMode[overload1]$$$setStartModeDebuggerStartMode -->
+<h3 class="fn" id="setStartMode"><a name="setStartMode"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setStartMode</span>(<span class="type"><a href="debugger.html#DebuggerStartMode-enum">DebuggerStartMode</a></span> <i>startMode</i>)</h3>
+<!-- @@@setStartMode -->
+<!-- $$$setSymbolFile[overload1]$$$setSymbolFileconstQString& -->
+<h3 class="fn" id="setSymbolFile"><a name="setSymbolFile"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setSymbolFile</span>(const <span class="type">QString</span> &amp;<i>symbolFile</i>)</h3>
+<!-- @@@setSymbolFile -->
+<!-- $$$setSysRoot[overload1]$$$setSysRootconstQString& -->
+<h3 class="fn" id="setSysRoot"><a name="setSysRoot"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setSysRoot</span>(const <span class="type">QString</span> &amp;<i>sysRoot</i>)</h3>
+<!-- @@@setSysRoot -->
+<!-- $$$setTestCase[overload1]$$$setTestCaseint -->
+<h3 class="fn" id="setTestCase"><a name="setTestCase"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setTestCase</span>(<span class="type">int</span> <i>testCase</i>)</h3>
+<!-- @@@setTestCase -->
+<!-- $$$setUseContinueInsteadOfRun[overload1]$$$setUseContinueInsteadOfRunbool -->
+<h3 class="fn" id="setUseContinueInsteadOfRun"><a name="setUseContinueInsteadOfRun"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUseContinueInsteadOfRun</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setUseContinueInsteadOfRun -->
+<!-- $$$setUseCtrlCStub[overload1]$$$setUseCtrlCStubbool -->
+<h3 class="fn" id="setUseCtrlCStub"><a name="setUseCtrlCStub"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUseCtrlCStub</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setUseCtrlCStub -->
+<!-- $$$setUseExtendedRemote[overload1]$$$setUseExtendedRemotebool -->
+<h3 class="fn" id="setUseExtendedRemote"><a name="setUseExtendedRemote"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUseExtendedRemote</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setUseExtendedRemote -->
+<!-- $$$setUsePortsGatherer[overload1]$$$setUsePortsGathererboolbool -->
+<h3 class="fn" id="setUsePortsGatherer"><a name="setUsePortsGatherer"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUsePortsGatherer</span>(<span class="type">bool</span> <i>useCpp</i>, <span class="type">bool</span> <i>useQml</i>)</h3>
+<!-- @@@setUsePortsGatherer -->
+<!-- $$$setUseTargetAsync[overload1]$$$setUseTargetAsyncbool -->
+<h3 class="fn" id="setUseTargetAsync"><a name="setUseTargetAsync"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUseTargetAsync</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setUseTargetAsync -->
+<!-- $$$setUseTerminal[overload1]$$$setUseTerminalbool -->
+<h3 class="fn" id="setUseTerminal"><a name="setUseTerminal"></a><span class="type">void</span> DebuggerRunTool::<span class="name">setUseTerminal</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<!-- @@@setUseTerminal -->
+<!-- $$$showMessage[overload1]$$$showMessageconstQString&intint -->
+<h3 class="fn" id="showMessage"><a name="showMessage"></a><span class="type">void</span> DebuggerRunTool::<span class="name">showMessage</span>(const <span class="type">QString</span> &amp;<i>msg</i>, <span class="type">int</span> <i>channel</i> = LogDebug, <span class="type">int</span> <i>timeout</i> = -1)</h3>
+<!-- @@@showMessage -->
+<!-- $$$start[overload1]$$$start -->
+<h3 class="fn" id="start"><a name="start"></a><span class="type">void</span> DebuggerRunTool::<span class="name">start</span>()</h3>
+<!-- @@@start -->
+<!-- $$$startDying[overload1]$$$startDying -->
+<h3 class="fn" id="startDying"><a name="startDying"></a><span class="type">void</span> DebuggerRunTool::<span class="name">startDying</span>()</h3>
+<!-- @@@startDying -->
+<!-- $$$startRunControl[overload1]$$$startRunControl -->
+<h3 class="fn" id="startRunControl"><a name="startRunControl"></a><span class="type">void</span> DebuggerRunTool::<span class="name">startRunControl</span>()</h3>
+<!-- @@@startRunControl -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn" id="stop"><a name="stop"></a><span class="type">void</span> DebuggerRunTool::<span class="name">stop</span>()</h3>
+<!-- @@@stop -->
+<!-- $$$terminalRunner[overload1]$$$terminalRunner -->
+<h3 class="fn" id="terminalRunner"><a name="terminalRunner"></a><span class="type"><a href="debugger-internal-terminalrunner.html">Internal::TerminalRunner</a></span> *DebuggerRunTool::<span class="name">terminalRunner</span>() const</h3>
+<!-- @@@terminalRunner -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

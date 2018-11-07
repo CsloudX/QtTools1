@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cache Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="extending-index.html">Extending Qt Creator Manual</a></td><td >Cache</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Extending Qt Creator Manual 4.5.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Cache Class</h1>
+<span class="small-subtitle">(<a href="projectexplorer-cache.html">ProjectExplorer::Cache</a>)<br/></span>
+<ul>
+<li><a href="projectexplorer-cache-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#Cache">Cache</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#Cache-1">Cache</a></b>(const Cache &amp;<i>other</i>) = delete</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#Cache-2">Cache</a></b>(Cache &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Utils::optional&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#check">check</a></b>(const QStringList &amp;<i>compilerArguments</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#insert">insert</a></b>(const QStringList &amp;<i>compilerArguments</i>, const T &amp;<i>values</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#invalidate">invalidate</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Cache &amp;</td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#operator-eq">operator=</a></b>(const Cache &amp;<i>other</i>) = delete</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Cache &amp;</td><td class="memItemRight bottomAlign"><b><a href="projectexplorer-cache.html#operator-eq-1">operator=</a></b>(Cache &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Cache[overload1]$$$Cache -->
+<h3 class="fn" id="Cache"><a name="Cache"></a>Cache::<span class="name">Cache</span>()</h3>
+<p>Default constructs an instance of Cache.</p><!-- @@@Cache -->
+<!-- $$$Cache$$$CacheconstCache& -->
+<h3 class="fn" id="Cache-1"><a name="Cache-1"></a><code>[delete] </code>Cache::<span class="name">Cache</span>(const <span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;<i>other</i>)</h3>
+<p>Copy constructor.</p><!-- @@@Cache -->
+<!-- $$$Cache$$$CacheCache&& -->
+<h3 class="fn" id="Cache-2"><a name="Cache-2"></a>Cache::<span class="name">Cache</span>(<span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-copy constructor.</p><!-- @@@Cache -->
+<!-- $$$check[overload1]$$$checkconstQStringList& -->
+<h3 class="fn" id="check"><a name="check"></a><span class="type">Utils::optional</span>&lt;<span class="type">T</span>&gt; Cache::<span class="name">check</span>(const <span class="type">QStringList</span> &amp;<i>compilerArguments</i>)</h3>
+<!-- @@@check -->
+<!-- $$$insert[overload1]$$$insertconstQStringList&constT& -->
+<h3 class="fn" id="insert"><a name="insert"></a><span class="type">void</span> Cache::<span class="name">insert</span>(const <span class="type">QStringList</span> &amp;<i>compilerArguments</i>, const <span class="type">T</span> &amp;<i>values</i>)</h3>
+<!-- @@@insert -->
+<!-- $$$invalidate[overload1]$$$invalidate -->
+<h3 class="fn" id="invalidate"><a name="invalidate"></a><span class="type">void</span> Cache::<span class="name">invalidate</span>()</h3>
+<!-- @@@invalidate -->
+<!-- $$$operator=[overload1]$$$operator=constCache& -->
+<h3 class="fn" id="operator-eq"><a name="operator-eq"></a><code>[delete] </code><span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;Cache::<span class="name">operator=</span>(const <span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;<i>other</i>)</h3>
+<p>Copy-assignment operator.</p><!-- @@@operator= -->
+<!-- $$$operator=$$$operator=Cache&& -->
+<h3 class="fn" id="operator-eq-1"><a name="operator-eq-1"></a><span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;Cache::<span class="name">operator=</span>(<span class="type"><a href="projectexplorer-cache.html#Cache">Cache</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-assignment operator.</p><!-- @@@operator= -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- vcs-module.qdoc -->
+  <title>Module vcs | Qbs Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qbs Manual</a></td><td ><a href="list-of-modules.html">List of Modules</a></td><td >Module vcs</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qbs 1.10.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#module-properties">Module Properties</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Module vcs</h1>
+<span class="subtitle"></span>
+<!-- $$$vcs-module.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The <code>vcs</code> module provides the current state of the project's repository via the <code>repoState</code> property. By default, a <code>C</code> header is also generated, allowing for simple retrieval of the repository state directly from within your C/C++ sources. This is useful to embed information into binaries about the exact state of the repository from which they were built. For instance:</p>
+<pre class="cpp">
+
+  <span class="preprocessor">#include &lt;vcs-repo-state.h&gt;</span>
+  <span class="preprocessor">#include &lt;iostream&gt;</span>
+
+  <span class="type">int</span> main()
+  {
+      std<span class="operator">::</span>cout <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;I was built from &quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> VCS_REPO_STATE <span class="operator">&lt;</span><span class="operator">&lt;</span> std<span class="operator">::</span>endl;
+  }
+
+</pre>
+<p>As you can see in the above code, a header file called <code>vcs-repo-state.h</code> is created, defining a macro called <code>VCS_REPO_STATE</code> which expands to a character constant describing the current state of the repository. For Git, this would be the current HEAD's commit hash.</p>
+<a name="module-properties"></a>
+<h2 id="module-properties">Module Properties</h2>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Property</th><th >Type</th><th >Since</th><th >Default</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >headerFileName</td><td >string</td><td >1.10</td><td ><code>&quot;vcs-repo-state.h&quot;</code></td><td >The name of the C header file to be created. Set this to <code>undefined</code> if you do not want a header file to be generated.</td></tr>
+<tr valign="top" class="even"><td >repoDir</td><td >string</td><td >1.10</td><td >the top-level project directory (<code>project.sourceDirectory</code>)</td><td >The root directory of the repository.</td></tr>
+<tr valign="top" class="odd"><td >repoState</td><td >string</td><td >1.10</td><td >-</td><td >The current state of the repository. For instance, in Git this is the commit hash of the current HEAD.</td></tr>
+<tr valign="top" class="even"><td >toolFilePath</td><td >string</td><td >1.10</td><td >the file name of the version control tool corresponding to <code>type</code></td><td >Set this if the tool has an unusual name in your local installation, or if it is located in a directory that is not in the build environment's <code>PATH</code>.</td></tr>
+<tr valign="top" class="odd"><td >type</td><td ><code>string</code></td><td >1.10</td><td >auto-detected</td><td >The version control system used in the project. Currently, the supported values are <code>&quot;git&quot;</code> and <code>&quot;svn&quot;</code>.</td></tr>
+</table></div>
+</div>
+<!-- @@@vcs-module.html -->
+<p class="naviNextPrevious footerNavi">
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

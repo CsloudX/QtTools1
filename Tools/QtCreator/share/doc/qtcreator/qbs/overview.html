@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbs.qdoc -->
+  <title>Introduction | Qbs Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qbs Manual</a></td><td >Introduction</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qbs 1.10.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="index.html" />
+  <link rel="next" href="setup.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="index.html">Qbs Manual</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="setup.html">Setup</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#declarative-paradigm">Declarative Paradigm</a></li>
+<li class="level1"><a href="#well-defined-language">Well-Defined Language</a></li>
+<li class="level1"><a href="#platform-and-programming-language-independence">Platform and Programming Language Independence</a></li>
+<li class="level1"><a href="#correct-and-fast-incremental-builds">Correct and Fast Incremental Builds</a></li>
+<li class="level1"><a href="#extensible-architecture">Extensible Architecture</a></li>
+<li class="level1"><a href="#ide-integration">IDE Integration</a></li>
+<li class="level2"><a href="#qt-creator">Qt Creator</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Introduction</h1>
+<span class="subtitle"></span>
+<!-- $$$overview.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Qbs is a build automation tool designed to conveniently manage the build process of real-life software projects across multiple platforms. It provides the following benefits:</p>
+<ul>
+<li>Declarative paradigm</li>
+<li>Well-defined language</li>
+<li>Platform and programming language independence</li>
+<li>Correct and fast incremental builds</li>
+<li>Extensible architecture</li>
+<li>Easy integration to IDEs</li>
+</ul>
+<a name="declarative-paradigm"></a>
+<h2 id="declarative-paradigm">Declarative Paradigm</h2>
+<p>When writing a project, it is important to describe the build tasks and dependencies between them, rather than the build order. It is difficult to determine the correct build order in complex projects, especially during parallel builds. The build tool should bear that burden, not the developer.</p>
+<p>With a declarative language, Qbs enables you to express intent rather than specifying single build steps. This provides the appropriate level of abstraction for a build system. For example, <i>dependencies</i> can be created between <i>products</i>, such that the target <i>artifacts</i> of the dependency can be used as input to the build <i>rules</i> in the context of the depending product. In addition, you can <i>export</i> dependencies and <i>properties</i> to other products.</p>
+<p>Qbs is modular with clean interfaces between modules. A <i>module</i> is a collection of properties and <i>language items</i> that are used for building a product if the product depends on the module. The properties that can be set for a module are used to control the behavior of the toolchain used to build the module.</p>
+<p>Qbs itself knows nothing about file types or extensions, and therefore all source files in a product are handled equally. However, you can assign <i>file tags</i> to an artifact to act as markers or to specify a file type. Qbs applies a rule to the source files of the project and chooses the ones that match the input file tags specified by the rule. It then creates artifacts in the build graph that have other filenames and file tags.</p>
+<p>Products and projects can contain <i>probes</i> that are run prior to building, for instance to locate dependent headers, libraries, and other files outside the project directory.</p>
+<a name="well-defined-language"></a>
+<h2 id="well-defined-language">Well-Defined Language</h2>
+<p>Qbs projects are specified in a QML dialect. QML is a concise, easy to learn, and intuitive language that is used successfully in the Qt project. Its core is declarative, but it can be extended with JavaScript snippets for extra flexibility.</p>
+<p>Qbs builds applications based on the information in a project file. Each project file specifies one <a href="project-item.html">project</a> that can contain several <a href="product-item.html">products</a>. You specify the type of the product, such as an <i>application</i>, and the dependencies the product has on other products.</p>
+<p>The product type determines the set of <a href="rule-item.html">rules</a> that Qbs applies to produce artifacts from input files. The input files can be divided into <a href="group-item.html">groups</a> according to their type or purpose, for example. A group can also be used to attach <a href="properties-item.html">properties</a> to products.</p>
+<p>The following is an example of a minimal project file that specifies the product type, application name, source file, and a dependency on the <a href="cpp-module.html">cpp module</a>:</p>
+<pre class="cpp">
+
+  import qbs
+
+  Application {
+      name: <span class="string">&quot;helloworld&quot;</span>
+      files: <span class="string">&quot;main.cpp&quot;</span>
+      Depends { name: <span class="string">&quot;cpp&quot;</span> }
+  }
+
+</pre>
+<p>For more information, see <a href="language-introduction.html">Language Introduction</a>.</p>
+<a name="platform-and-programming-language-independence"></a>
+<h2 id="platform-and-programming-language-independence">Platform and Programming Language Independence</h2>
+<p>Qbs can be used for any software project, regardless of programming language, toolkit, or libraries used. Qbs has built-in support for building applications for Windows, Linux, macOS, Android, iOS, tvOS, watchOS, QNX, and FreeBSD, as well as for cross-compilation. It can be easily extended to support further platforms.</p>
+<p>Invoking <code>qbs build</code> from the command line automatically builds the project for the current host platform using the best available toolchain and settings, unless a default profile is set. You can configure additional profiles for each toolchain you want to use and select the profile to use at build time.</p>
+<p>For example, to build applications for Android devices, you would need to set up a profile for the Android toolchain and select it when you build the application. If you name the profile <i>Android</i>, you would then enter the following command:</p>
+<pre class="cpp">
+
+  qbs build profile:Android
+
+</pre>
+<p>For more information, see <a href="building-applications.html">Building Applications</a>.</p>
+<p>Platform and programming language support is implemented as a set of <a href="list-of-modules.html">modules</a> that your product depends on. In the language example above, the dependency on the <a href="cpp-module.html">cpp module</a> determines that the C++ sources are compiled and linked into a binary.</p>
+<p>Alternatively, you could use the <a href="cppapplication-item.html">CppApplication</a> convenience item that implies a dependency on the <code>cpp</code> module:</p>
+<pre class="cpp">
+
+  CppApplication {
+      name: <span class="string">&quot;helloworld&quot;</span>
+      files: <span class="string">&quot;main.cpp&quot;</span>
+  }
+
+</pre>
+<p>Additionally, if the sources use Qt, you need a dependency to the <a href="qt-modules.html">Qt.core module</a>, and so on.</p>
+<p>In addition to building projects, Qbs can install the build artifacts to a location from where they can be run on the desktop or on a device. Qbs modules can be used to create installers for the end users of the applications. For example, the <a href="dmg-module.html">dmg</a> module contains properties and rules for building Apple Disk Images, which are typically used to distribute applications and installers on macOS. The <a href="innosetup-module.html">innosetup</a>, <a href="nsis-module.html">nsis</a>, and <a href="wix-module.html">wix</a> modules contain properties and rules for building installers for Windows platforms.</p>
+<a name="correct-and-fast-incremental-builds"></a>
+<h2 id="correct-and-fast-incremental-builds">Correct and Fast Incremental Builds</h2>
+<p>Qbs is an all-in-one tool that generates a build graph from a high-level project description (like qmake or CMake) and additionally undertakes the task of executing the commands in the low-level build graph (like make).</p>
+<p>Qbs automatically takes advantage of multi-processor and multi-core systems to achieve maximum build parallelization. By default, running <code>qbs</code> without any arguments is roughly equivalent to running <code>make -j&lt;n&gt;</code> where <code>n</code> is the number of CPU cores. Similarly, Qbs allows the number of concurrent jobs to be explicitly specified using its own <code>-j</code> option.</p>
+<p>Qbs has knowledge about the whole project, and therefore builds remain correct even when you build sub-projects, because Qbs ensures that all dependencies are built too. This virtually eliminates the need for clean builds.</p>
+<p>Qbs uses dynamic build graphs with build rules that can generate a variable number of files and that are executed only when needed. When figuring out which rules to execute, Qbs starts at the product type and then looks for a way to produce artifacts with matching file tags from source files, using a chain of rules that are connected by their respective input and output tags. For an example of how rules are applied when building products, see <a href="rule-item.html#rules-and-product-types">Rules and Product Types</a>.</p>
+<p>The Qbs build rules can produce a variable number of outputs. If the input changes, only the required rules are applied at build time. If a rule is applied, all the dependent rules are applied as well, but only those. This feature ensures the correctness of the build graph after source code changes without having to re-configure the whole project.</p>
+<p>Changing properties that do not affect the build, because they are not used by rules, will not cause the project to be rebuilt. The use of properties is tracked. Generated artifacts that cease to exist are deleted to avoid picking outdated generated artifacts and indefinitely increasing the size of the build directory.</p>
+<p>Fast incremental builds are crucial for a fast edit-build-run cycle. Instead of retrieving the timestamps of generated files, Qbs uses the time stamps stored in the build graph. This is especially important on Windows, where file system operations are slow.</p>
+<p>If the project files were not changed, the build graph is loaded from disk. It is stored in a binary format that can be loaded much faster than the real project files. The project files are parsed only if they were changed.</p>
+<a name="extensible-architecture"></a>
+<h2 id="extensible-architecture">Extensible Architecture</h2>
+<p>You can create your own custom <a href="list-of-modules.html">modules</a> and <a href="list-of-language-items.html">items</a> and make Qbs aware of them.</p>
+<p>You store the custom modules and items in a subdirectory of the project directory and specify the path to the subdirectory as a value of the <code>qbsSearchPaths</code> property. For example, if the custom module is located at <code>my-modules/modules/modulename/modulename.qbs</code>, you would specify it in the project file as follows:</p>
+<pre class="cpp">
+
+  Project {
+      qbsSearchPaths: <span class="string">&quot;my-modules&quot;</span>
+
+</pre>
+<p>For more information, see <a href="custom-modules.html">Custom Modules and Items</a>.</p>
+<a name="ide-integration"></a>
+<h2 id="ide-integration">IDE Integration</h2>
+<p>Qbs can be used not only from the command line, but also in combination with an IDE, such as Qt Creator, Microsoft Visual Studio, or Xcode. Qt Creator directly supports Qbs projects. Visual Studio and Xcode users can use Qbs to generate Microsoft Visual Studio and Xcode projects. For more information, see <a href="generators.html">Generators</a>.</p>
+<a name="qt-creator"></a>
+<h3 >Qt Creator</h3>
+<p><a href="http://doc.qt.io/qtcreator/index.html">Qt Creator</a> uses the same Qbs library as the Qbs command line tools. Therefore, it can retrieve all the information required to build a single file or project through a defined public API. Qt Creator provides accurate information about the build progress and displays a project tree that reflects the logical structure of the project, instead of presenting low-level information, such as the file system structure. Adding or removing source files keeps the existing project file structure intact.</p>
+<p>For more information about using Qbs to build projects from Qt Creator, see <a href="http://doc.qt.io/qtcreator/creator-project-qbs.html">Setting Up Qbs</a>.</p>
+</div>
+<!-- @@@overview.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="index.html">Qbs Manual</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="setup.html">Setup</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

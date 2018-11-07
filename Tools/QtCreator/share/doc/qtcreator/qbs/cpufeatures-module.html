@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- cpufeatures-module.qdoc -->
+  <title>Module cpufeatures | Qbs Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qbs Manual</a></td><td ><a href="list-of-modules.html">List of Modules</a></td><td >Module cpufeatures</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qbs 1.10.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#cpufeatures-properties">cpufeatures Properties</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Module cpufeatures</h1>
+<span class="subtitle"></span>
+<!-- $$$cpufeatures-module.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The <code>cpufeatures</code> module offers properties for enabling or disabling specific CPU features. Use it if you want to override the compiler defaults for a given platform.</p>
+<p>The compiler rules in the <a href="cpp-module.html">cpp module</a> evaluate this module's properties and generate matching compiler flags. All properties in this module are of type <code>bool</code> and have the following semantics:</p>
+<ul>
+<li>The default value <code>undefined</code> has no effect on the compiler command line.</li>
+<li>If the value is <code>true</code> and the compiler has a flag to enable the feature, that flag is added to the command line if it is applicable to the current architecture. For example, enabling the property <code>x86_sse2</code> would result in the GCC option <code>-msse2</code>.</li>
+<li>If the value is <code>false</code> and the compiler has a flag to disable the feature, that flag is added to the command line if it is applicable to the current architecture. For example, disabling the property <code>x86_sse2</code> would result in the GCC option <code>-no-msse2</code>.</li>
+</ul>
+<a name="cpufeatures-properties"></a>
+<h2 id="cpufeatures-properties">cpufeatures Properties</h2>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Property</th><th >Type</th><th >Since</th><th >Default</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >arm_neon</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use NEON instructions in ARM binaries.</td></tr>
+<tr valign="top" class="even"><td >arm_vfpv4</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use VFPv4 instructions in ARM binaries.</td></tr>
+<tr valign="top" class="odd"><td >mips_dsp</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use DSP instructions in MIPS binaries.</td></tr>
+<tr valign="top" class="even"><td >mips_dspr2</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use DSPr2 instructions in MIPS binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_avx2</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX2 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx512bw</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-BW instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_avx512cd</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-CD instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx512dq</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-DQ instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_avx512er</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-ER instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx512f</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_avx512ifma</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-IFMA instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx512pf</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-PF instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_avx512vbmi</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-VBMI instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_avx512vl</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use AVX-512-VL instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_f16c</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use F16C instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_sse2</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use SSE2 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_sse3</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use SSE3 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_ssse3</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use SSSE3 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="even"><td >x86_sse4_1</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use SSE4.1 instructions in x86 binaries.</td></tr>
+<tr valign="top" class="odd"><td >x86_sse4_2</td><td >bool</td><td >1.10</td><td >undefined</td><td >Whether to use SSE4.2 instructions in x86 binaries.</td></tr>
+</table></div>
+</div>
+<!-- @@@cpufeatures-module.html -->
+<p class="naviNextPrevious footerNavi">
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
